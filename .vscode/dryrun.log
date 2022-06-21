@@ -1,0 +1,7 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/nikilyushkin/Projects/infomate.club'
+python3 manage.py migrate
+python3 manage.py runserver 0.0.0.0:8000
+gunicorn infomate.asgi:application -w 3 -k uvicorn.workers.UvicornWorker --bind=0.0.0.0:8816 --capture-output --log-level debug --access-logfile - --error-logfile -
+make: Leaving directory `/Users/nikilyushkin/Projects/infomate.club'
+ 

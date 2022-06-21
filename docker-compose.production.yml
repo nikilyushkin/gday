@@ -1,0 +1,50 @@
+version: "3"
+services:
+  app: &app
+    image: ghcr.io/vas3k/infomate:${GITHUB_SHA:-latest}
+    command: make docker-run-app
+    container_name: infomate_app
+    environment:
+      - MODE=production
+      - PYTHONUNBUFFERED=1
+      - DEBUG=false
+      - APP_HOST=https://gday.iocats.com
+      - POSTGRES_DB=infomate
+      - POSTGRES_USER=vas3k
+      - POSTGRES_PASSWORD=vas3k
+      - POSTGRES_HOST=localhost
+    env_file:
+      - .env
+    restart: always
+    network_mode: "host"  # this is needed to use host postgres, feel free to remove this line and use "postgres" container below
+    ports:
+      - "127.0.0.1:8816:8816"
+
+  cron:
+    <<: *app
+    command: make docker-run-cron
+    container_name: infomate_cron
+    depends_on:
+      - app
+    ports: []
+
+#  postgres:
+#    image: postgres:12
+#    container_name: infomate_postgres
+#    restart: always
+#    environment:
+#      POSTGRES_USER: vas3k
+#      POSTGRES_PASSWORD: vas3k
+#      POSTGRES_DB: infomate
+#    volumes:
+#      - /tmp/pgdata:/var/lib/postgresql/data:rw
+
+  migrate_and_init:
+    <<: *app
+    container_name: infomate_init_feeds
+    restart: "no"
+    ports: []
+    depends_on:
+      - app
+    command: make feed_init feed_refresh
+

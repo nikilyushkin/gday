@@ -1,0 +1,418 @@
+/* Main styles */
+.menu {
+    font-size: 29px;
+    line-height: 70px;
+    height: 70px;
+}
+
+    .menu-logo {
+        text-align: center;
+        font-weight: bold;
+        padding-left: 20px;
+    }
+
+        .menu-logo img {
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+            position: relative;
+            top: -3px;
+        }
+
+    .menu-theme-switcher {
+        text-align: center;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: var(--link-color);
+    }
+
+.landing-info {
+    text-align: center;
+    min-height: 100px;
+}
+
+    .landing-info-title {
+        margin-top: 100px;
+        font-weight: normal;
+        font-size: 36px;
+        padding: 0 20px;
+    }
+
+.landing-boards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 18px;
+}
+
+    .landing-boards a {
+        color: var(--link-color);
+    }
+
+    .landing-board {
+        display: block;
+        text-decoration: none;
+        width: 250px;
+        height: 300px;
+        text-align: center;
+        margin: 30px;
+        border-radius: 30px;
+        padding: 40px 20px;
+    }
+
+        .landing-board:hover {
+            background-color: var(--opposite-bg-color);
+            color: var(--opposite-text-color);
+        }
+
+        .landing-board-avatar {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+        }
+
+        .landing-board-name {
+            display: block;
+            font-size: 160%;
+            line-height: 115%;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .landing-board-title {
+            display: block;
+        }
+
+.header {
+    /*background-image: linear-gradient(285.46deg, rgb(0, 0, 0) 3.26%, rgb(33, 35, 49) 93.52%);*/
+}
+
+.curator {
+    max-width: 700px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+    .curator-avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    .curator-info {
+        margin-left: 30px;
+        line-height: 1.5;
+    }
+
+        .curator-name {
+            font-size: 210%;
+            font-weight: 600;
+            padding-top: 10px;
+        }
+
+        .curator-url {
+            font-size: 120%;
+            line-height: 1;
+        }
+
+        .curator-bio {
+            font-size: 120%;
+            padding-top: 10px;
+        }
+
+        .curator-info a {
+            color: var(--link-color);
+        }
+
+    @media only screen and (max-width : 570px) {
+        .curator {
+            font-size: 12px;
+        }
+
+            .curator-avatar {
+                width: 100px;
+                height: 100px;
+            }
+    }
+
+.board-empty {
+    padding: 100px 20px;
+    text-align: center;
+    font-size: 130%;
+}
+
+.block {
+    position: relative;
+    margin-bottom: 100px;
+}
+
+    .block-header {
+        font-size: 180%;
+        text-align: center;
+        border-bottom: solid 1.5px var(--text-color);
+        min-height: 45px;
+        font-weight: bold;
+    }
+
+    .is-block-blurred {
+        filter: blur(7px) contrast(175%);
+        user-select: none;
+    }
+
+.block-login-window {
+    display: block;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    min-height: 250px;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 150px #000;
+    font-size: 120%;
+    line-height: 1.5;
+}
+
+    .block-login-title {
+        display: block;
+        font-size: 160%;
+        font-weight: bold;
+    }
+
+    .block-login-description {
+        display: block;
+        margin: 40px 0;
+    }
+
+        .block-login-description a {
+            color: var(--text-color) !important;
+        }
+
+    .block-login-button {
+        display: inline-block;
+
+    }
+
+.feed {
+    padding: 35px 20px 0;
+}
+
+    .feed-title {
+        margin-bottom: 15px;
+        line-height: 1em;
+    }
+
+        .feed-title-hidden {
+            visibility: hidden;
+        }
+
+        .feed-title img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            vertical-align: middle;
+            float: left;
+        }
+
+        .feed-title a {
+            font-size: 130%;
+            line-height: 1.3em;
+            color: var(--link-color);
+            font-weight: bold;
+        }
+
+        .feed-title small {
+            font-size: 70%;
+            opacity: 0.7;
+            line-height: 1.0em;
+        }
+
+    .feed-articles {
+        margin-bottom: 40px;
+    }
+
+
+.article {
+    position: relative;
+    margin-bottom: 8px;
+    height: 20px;
+}
+
+    .article-title {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .article-title a:focus {
+        background-color: var(--opposite-bg-color);
+        color: var(--opposite-text-color);
+        outline-width: 0;
+        text-decoration: none;
+    }
+
+    .article-favicon {
+        max-width: 20px;
+        max-height: 20px;
+        padding-right: 4px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .article-tooltip {
+        visibility: hidden;
+        transition: visibility 0.1s;
+        width: 100%;
+        max-width: 400px;
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 20px;
+        background-color: var(--opposite-bg-color);
+        color: var(--opposite-text-color) !important;
+        z-index: 999;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        .article:hover > .article-tooltip {
+            visibility: visible;
+        }
+
+        .article-tooltip-image {
+            display: block;
+            max-width: 100%;
+            max-height: 200px;
+            margin: 0 auto 20px;
+        }
+
+        .article-tooltip-title {
+            display: block;
+            font-weight: bold;
+            font-size: 110%;
+        }
+
+        .article-tooltip-description {
+            display: block;
+            font-weight: normal;
+            margin: 0;
+            font-size: 85%;
+            overflow: hidden;
+        }
+
+        .article-tooltip-info {
+            display: block;
+            font-weight: normal;
+            font-size: 70%;
+            margin-top: 10px;
+        }
+
+
+    .is-article-fresh {
+        font-weight: 600;
+        color: var(--brighter-text-color);
+    }
+
+.message-popup {
+    text-align: center;
+    font-size: 120%;
+}
+
+.board-footer {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    font-size: 140%;
+    line-height: 140%;
+}
+
+    .board-footer .big {
+        font-size: 200%;
+    }
+
+.footer {
+    text-align: center;
+    padding: 100px 20px 50px;
+}
+
+    .logout-button {
+        display: inline-block;
+        color: var(--opposite-text-color) !important;
+        font-size: 90%;
+        padding: 5px 15px;
+        margin-top: 40px;
+    }
+
+    .export-button {
+        display: inline-block;
+        color: var(--opposite-text-color);
+        font-size: 90%;
+        padding: 10px 20px;
+        margin-top: 40px;
+    }
+
+.document {
+    font-size: 110%;
+    line-height: 1.5;
+}
+
+    .document h1 > a,
+    .document h2 > a {
+        text-decoration: none;
+    }
+
+    .privacy-policy {
+        white-space: pre-wrap;
+    }
+
+    .what {
+        font-size: 120%;
+        padding: 40px;
+    }
+
+        .what-block:target {
+            color: var(--opposite-text-color);
+            background-color: var(--opposite-bg-color);
+        }
+
+            .what-block:target a {
+                color: var(--opposite-text-color);
+            }
+
+        .what-block {
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .what h2 {
+            font-size: 160%;
+            margin: 10px 0 30px;
+        }
+
+.export {
+    min-height: 400px;
+}
+
+    .coming-soon {
+        display: block;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 100px 20px;
+    }
+
+        .coming-soon h2 {
+            font-size: 200%;
+        }
+
+        .coming-soon p {
+            font-size: 120%;
+        }

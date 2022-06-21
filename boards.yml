@@ -1,0 +1,36 @@
+boards:
+  - name: Технологии
+    slug: tech
+    is_visible: true
+    is_private: false
+    curator:
+      name: Технологии
+      title: Главные новости
+      avatar: https://i.vas3k.ru/229b722cc79faca1f148c66b1e7240488e7405704f94b8d7f0fadddcf66212f0.jpg
+      bio: Подборка мейнстримовых новостей о технологиях на русском и английском языках
+    blocks:
+      - name: На английском
+        slug: en
+        feeds:
+          - name: Hacker News
+            url: https://news.ycombinator.com
+            rss: https://news.ycombinator.com/rss
+
+  - name: Игры, железки и геймдев
+    slug: games
+    is_visible: true
+    is_private: false
+    curator:
+      name: Игры, железки и геймдев
+      avatar: https://i.vas3k.ru/d91addda792605da2764afc6c866257e05b8218d11b91534eaf0e87c03acebe5.jpg
+      bio: Бета-версия подборки новостей об играх и всём, что с ними связано
+    blocks:
+      - name: На английском
+        slug: en
+        feeds:
+          - name: IGN
+            url: https://ign.com/
+            rss: https://feeds.feedburner.com/ign/all
+            icon: https://i.vas3k.ru/cd6895f1b150d96ffa85bc8b160a79b2b294b9712d7f887f54d5f167a61bffd6.png
+            is_parsable: false
+

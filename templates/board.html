@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% load text_filters %}
+{% load static %}
+
+{% block title %}{{ board.curator_name }}{% if board.curator_title %} | {{ board.curator_title }}{% endif %} | {{ block.super }}{% endblock %}
+
+{% block og_tags %}
+    <meta property="og:title" content="{{ board.curator_name }}{% if board.curator_title %} | {{ board.curator_title }}{% endif %}">
+    <meta property="og:site_name" content="Infomate">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="{{ board.curator_bio }}">
+    <meta property="og:image" content="{{ board.avatar }}">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ board.curator_name }}{% if board.curator_title %} | {{ board.curator_title }}{% endif %}">
+    <meta name="twitter:description" content="{{ board.curator_bio }}">
+    <meta name="twitter:image" content="{{ board.avatar }}">
+{% endblock %}
+
+{% block content %}
+<div class="header">
+    <div class="curator">
+        <div class="avatar curator-avatar" style="background-image: url('{{ board.avatar }}'), linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);"></div>
+        <div class="curator-info">
+            <div class="curator-name">{{ board.curator_name }}</div>
+
+            {% if board.curator_url %}
+                <div class="curator-url">
+                    👉 {{ board.curator_url|safe }}
+                </div>
+            {% endif %}
+
+            {% if board.curator_bio %}
+                <div class="curator-bio">{{ board.curator_bio|safe }}</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="board">
+    {% block board %}
+        {% if not blocks %}
+            <div class="board-empty">
+                Скоро будет!
+            </div>
+        {% endif %}
+        {% for block in blocks %}
+            {% include block.template %}
+        {% endfor %}
+    {% endblock %}
+</div>
+
+{% if board %}
+    <div class="board-footer">
+        {% if board.curator_footer %}
+            <span class="big">👆</span> {{ board.curator_footer|safe }}<br>
+        {% endif %}
+
+        {% if board.natural_refreshed_at %}
+            <br><small>Обновлено {{ board.natural_refreshed_at }}</small>
+        {% endif %}
+    </div>
+{% endif %}
+{% endblock %}
