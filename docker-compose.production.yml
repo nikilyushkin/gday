@@ -38,6 +38,8 @@ services:
       POSTGRES_DB: infomate
     volumes:
       - /tmp/pgdata:/var/lib/postgresql/data:rw
+    ports:
+      - "5432:5432"
 
   migrate_and_init:
     <<: *app
