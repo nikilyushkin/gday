@@ -12,13 +12,15 @@ services:
       - POSTGRES_DB=infomate
       - POSTGRES_USER=vas3k
       - POSTGRES_PASSWORD=vas3k
-      - POSTGRES_HOST=localhost
+#      - POSTGRES_HOST=localhost
     env_file:
       - .env
     restart: always
 #    network_mode: "host"  # this is needed to use host postgres, feel free to remove this line and use "postgres" container below
     ports:
       - "127.0.0.1:8816:8816"
+    depends_on:
+      - postgres
 
   cron:
     <<: *app
