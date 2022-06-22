@@ -71,8 +71,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = "ru-ru"
-TIME_ZONE = "UTC"
+LANGUAGE_CODE = "en-us"
+TIME_ZONE = "UTC+12:00"
 USE_I18N = True
 USE_L10N = True
 USE_TZ = False
@@ -106,7 +106,7 @@ BOARD_CACHE_SECONDS = 10 * 60  # 10 min
 # App settings
 
 APP_NAME = "Infomate"
-APP_TITLE = "Агрегатор инфополя"
+APP_TITLE = "Covering Media in just a sexier way"
 APP_DESCRIPTION = APP_TITLE
 APP_HOST = os.getenv("APP_HOST") or "http://127.0.0.1:8000"
 
