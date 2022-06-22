@@ -1,36 +1,31 @@
 boards:
-  - name: Технологии
-    slug: tech
-    is_visible: true
-    is_private: false
-    curator:
-      name: Технологии
-      title: Главные новости
-      avatar: https://i.vas3k.ru/229b722cc79faca1f148c66b1e7240488e7405704f94b8d7f0fadddcf66212f0.jpg
-      bio: Подборка мейнстримовых новостей о технологиях на русском и английском языках
-    blocks:
-      - name: На английском
-        slug: en
-        feeds:
-          - name: Hacker News
-            url: https://news.ycombinator.com
-            rss: https://news.ycombinator.com/rss
-
-  - name: Игры, железки и геймдев
-    slug: games
-    is_visible: true
-    is_private: false
-    curator:
-      name: Игры, железки и геймдев
-      avatar: https://i.vas3k.ru/d91addda792605da2764afc6c866257e05b8218d11b91534eaf0e87c03acebe5.jpg
-      bio: Бета-версия подборки новостей об играх и всём, что с ними связано
-    blocks:
-      - name: На английском
-        slug: en
-        feeds:
-          - name: IGN
-            url: https://ign.com/
-            rss: https://feeds.feedburner.com/ign/all
-            icon: https://i.vas3k.ru/cd6895f1b150d96ffa85bc8b160a79b2b294b9712d7f887f54d5f167a61bffd6.png
-            is_parsable: false
-
+- name: Tech            # board title
+  slug: tech            # board url
+  is_visible: true      # visibility on the main page
+  is_private: false     # private boards require logging in
+  curator:              # board author profile
+    name: John Wick 
+    title: Main news
+    avatar: https://i.vas3k.ru/fhr.png 
+    bio: Major technology media in English and Russian
+    footer: >
+      this is a general selection of popular technology media.
+      The page is updated once per hour.
+  blocks:               # list of logical feed blocks
+  - name: English       # block title
+    slug: en            # unique board id
+    feeds:         
+      - name: Hacker News
+        url: https://news.ycombinator.com
+        rss: https://news.ycombinator.com/rss
+      - name: dev.to
+        url: https://dev.to
+        rss: https://dev.to/feed
+      - name: TechCrunch
+        rss: http://feeds.feedburner.com/TechCrunch/
+        url: https://techcrunch.com
+        is_parsable: false  # do not try to parse pages, show RSS content only
+        conditions:
+          - type: not_in
+            field: title
+            word: Trump   # exclude articles with a word "Trump" in title
