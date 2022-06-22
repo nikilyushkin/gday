@@ -28,7 +28,8 @@ def board(request, board_slug):
         return cached_page
 
     blocks = BoardBlock.objects.filter(board=board)
-    feeds = BoardFeed.objects.select_related("articles").filter(board=board)
+#    feeds = BoardFeed.objects.select_related("articles").filter(board=board)
+    feeds = BoardFeed.objects.filter(board=board)
     result = render(request, "board.html", {
         "board": board,
         "blocks": blocks,
