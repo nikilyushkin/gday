@@ -50,5 +50,5 @@ services:
     ports: []
     depends_on:
       - app
-    command: make feed_init feed_refresh
+    command: make migrate feed_init feed_refresh
 
