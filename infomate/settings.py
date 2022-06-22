@@ -105,7 +105,7 @@ BOARD_CACHE_SECONDS = 10 * 60  # 10 min
 
 # App settings
 
-APP_NAME = "Infomate"
+APP_NAME = "Gday, Mate"
 APP_TITLE = "Covering Media in just a sexier way"
 APP_DESCRIPTION = APP_TITLE
 APP_HOST = os.getenv("APP_HOST") or "http://127.0.0.1:8000"
