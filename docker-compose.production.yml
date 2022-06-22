@@ -7,7 +7,7 @@ services:
     environment:
       - MODE=production
       - PYTHONUNBUFFERED=1
-      - DEBUG=false
+      - DEBUG=true
       - APP_HOST=https://gday.iocats.com
       - POSTGRES_DB=infomate
       - POSTGRES_USER=vas3k
