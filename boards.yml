@@ -1,31 +1,432 @@
+#boards:
+#- name: Tech            # board title
+#  slug: tech            # board url
+#  is_visible: true      # visibility on the main page
+#  is_private: false     # private boards require logging in
+#  curator:              # board author profile
+#    name: John Wick
+#    title: Main news
+#    avatar: https://i.vas3k.ru/fhr.png
+#    bio: Major technology media in English and Russian
+#    footer: >
+#      this is a general selection of popular technology media.
+#      The page is updated once per hour.
+#  blocks:               # list of logical feed blocks
+#  - name: English       # block title
+#    slug: en            # unique board id
+#    feeds:
+#      - name: Hacker News
+#        url: https://news.ycombinator.com
+#        rss: https://news.ycombinator.com/rss
+#      - name: dev.to
+#        url: https://dev.to
+#        rss: https://dev.to/feed
+#      - name: TechCrunch
+#        rss: http://feeds.feedburner.com/TechCrunch/
+#        url: https://techcrunch.com
+#        is_parsable: false  # do not try to parse pages, show RSS content only
+#        conditions:
+#          - type: not_in
+#            field: title
+#            word: Trump   # exclude articles with a word "Trump" in title
+
 boards:
-- name: Tech            # board title
-  slug: tech            # board url
-  is_visible: true      # visibility on the main page
-  is_private: false     # private boards require logging in
-  curator:              # board author profile
-    name: John Wick
-    title: Main news
-    avatar: https://i.vas3k.ru/fhr.png
-    bio: Major technology media in English and Russian
-    footer: >
-      this is a general selection of popular technology media.
-      The page is updated once per hour.
-  blocks:               # list of logical feed blocks
-  - name: English       # block title
-    slug: en            # unique board id
-    feeds:
-      - name: Hacker News
-        url: https://news.ycombinator.com
-        rss: https://news.ycombinator.com/rss
-      - name: dev.to
-        url: https://dev.to
-        rss: https://dev.to/feed
-      - name: TechCrunch
-        rss: http://feeds.feedburner.com/TechCrunch/
-        url: https://techcrunch.com
-        is_parsable: false  # do not try to parse pages, show RSS content only
-        conditions:
-          - type: not_in
-            field: title
-            word: Trump   # exclude articles with a word "Trump" in title
+  - name: News
+    slug: news
+    is_visible: true
+    is_private: false
+    curator:
+      name: News
+      title: The ultimate FOMO killer
+      avatar:  https://gday.iocats.com/static/icons/news.png
+      bio: Our subjective selection of the main news publications to follow the events in Aotearoa and in the world 🤓
+    blocks:
+      - name: 🇳🇿 Aotearoa
+        slug: nz
+        feeds:
+          - name: Reddit 🇳🇿
+            url: https://www.reddit.com/r/NewZealand/
+            rss: https://www.reddit.com/r/NewZealand.rss
+            icon: https://i.vas3k.ru/3062b953fa39b4f3bc26a5f3ba65effb0fac935ffa5ee50c3b734107be457c48.png
+            columns: 2
+          - name: Radio NZ
+            url: https://www.rnz.co.nz/
+            rss: https://www.rnz.co.nz/rss
+            icon: https://www.rnz.co.nz/brand-images/rnz-sky-sq.jpg
+            mix:
+              - https://www.rnz.co.nz/rss/business.xml
+              - https://www.rnz.co.nz/rss/country.xml
+              - https://www.rnz.co.nz/rss/national.xml
+              - https://www.rnz.co.nz/rss/political.xml
+              - https://www.rnz.co.nz/rss/sport.xml
+          - name: Stuff News
+            url: https://www.stuff.co.nz/
+            rss: https://www.stuff.co.nz/rss
+            icon: https://www.stuff.co.nz/static/spade/icons_v2/apple-touch-icon-120x120.png
+          - name: NZ Herald
+            url: https://www.nzherald.co.nz/
+            rss: https://www.nzherald.co.nz/technology/nz-herald-news-rss-feeds/
+            icon: https://www.nzherald.co.nz/pf/resources/images/favicons/apple-touch-icon-144x144-precomposed.png?d=342
+            mix:
+              - http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000001.xml
+              - http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000003.xml
+              - http://rss.nzherald.co.nz/rss/xml/nzhrsscid_001501119.xml
+              - http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000005.xml
+      - name: 🇺🇸 USA
+        slug: us
+        feeds:
+          - name: Reddit News
+            url: https://www.reddit.com/r/news/
+            rss: https://www.reddit.com/r/news.rss
+            icon: https://i.vas3k.ru/3062b953fa39b4f3bc26a5f3ba65effb0fac935ffa5ee50c3b734107be457c48.png
+          - name: Reuters
+            url: https://www.reuters.com/news/world
+            rss: https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com&ceid=US:en&hl=en-US&gl=US
+          - name: Bloomberg
+            url: https://www.bloomberg.com/
+            rss: http://www.bloomberg.com/politics/feeds/site.xml
+            icon: https://i.vas3k.ru/35c6ae6df0fe47166ed5c656bde6faa974ae1beca949c89443f0aed0b86e0806.png
+          - name: NPR
+            url: https://www.npr.org/
+            rss: https://feeds.npr.org/1002/rss.xml
+            icon: https://i.vas3k.ru/1cc80e832275af7735ca0d600d934e4b0419f398f6b142073b576c99d948517f.jpg
+          - name: POLITICO
+            url: https://www.politico.com/
+            rss: https://www.politico.com/rss/politicopicks.xml
+            icon: https://i.vas3k.ru/0281ddd9b3bd890e1476666d5ea74688bc5fcf313500a5fc166127bc433b1287.jpg
+            is_parsable: false
+      - name: 🏳️‍🌈 Left
+        slug: us_left
+        view: "blocks/two.html"
+        feeds:
+          - view: "feeds/favicons.html"
+            is_parsable: false
+            mix:
+              - http://rss.cnn.com/rss/edition.rss
+              - https://www.huffpost.com/section/front-page/feed
+              - https://www.newyorker.com/feed/news
+              - https://www.msnbc.com/feed
+              - https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+              - https://www.vox.com/rss/index.xml
+      - name: 💰 Right
+        slug: us_right
+        view: "blocks/two.html"
+        feeds:
+          - view: "feeds/favicons.html"
+            is_parsable: false
+            mix:
+              - http://feeds.feedburner.com/foxnews/latest
+              - https://spectator.org/feed
+              - https://www.washingtontimes.com/rss/headlines/news/
+              - https://www.dailymail.co.uk/ushome/index.rss
+              - https://feeds.feedburner.com/breitbart
+      - name: Europe
+        slug: eu
+        feeds:
+          - name: BBC
+            url: https://www.bbc.com/
+            rss: http://feeds.bbci.co.uk/news/rss.xml
+            icon: https://i.vas3k.ru/635c5e5828a4868b73bdb777611084a3459873b628f3f7f9752a34e1516fc505.png
+          - name: The Guardian
+            url: https://www.theguardian.com/international
+            rss: https://www.theguardian.com/international/rss
+          - name: Deutsche Welle
+            url: https://www.dw.com/
+            rss: https://rss.dw.com/rdf/rss-en-top
+      - name: Asia
+        slug: asia
+        feeds:
+          - name: Al Jazeera
+            url: https://www.aljazeera.com/
+            rss: https://www.aljazeera.com/xml/rss/all.xml
+            icon: https://i.vas3k.ru/c460dced3f230cd47c0626db1278c31d23325d98059487a57bdbbeac6e49c8d1.png
+          - name: The Hindu
+            url: https://www.thehindu.com/
+            rss: https://www.thehindu.com/news/international/feeder/default.rss
+            icon: https://i.vas3k.ru/f3633b075315d58c7f9750f69d726627e1e42763352d72850eab7bc5bce28a09.jpg
+          - name: South China Morning Post
+            url: https://www.scmp.com/
+            rss: https://www.scmp.com/rss/91/feed
+            icon: https://i.vas3k.ru/a9261d4f317ea377bc68a5c6a7526d6b6127ef5cae9204345f63435688a2f069.jpg
+      - name: россия
+        slug: ru
+        feeds:
+          - name: Meduza
+            url: https://meduza.io/
+            rss: https://meduza.io/rss/all
+            icon: https://i.vas3k.ru/e4b09a9d72f9b0157b88ed1cc5b755f7b6099358c889edce021a481442c7222f.png
+          - name: TJ
+            url: https://tjournal.ru
+            rss: https://tjournal.ru/rss/all
+            is_parsable: false
+          - name: Коммерсантъ
+            url: https://www.kommersant.ru/
+            rss: https://www.kommersant.ru/RSS/news.xml
+            icon: https://i.vas3k.ru/70e935c410a400d14beaadc25ddd13b386267ee7e56bd028c47ebfeb49c497cd.jpg
+          - name: Ведомости
+            url: https://www.vedomosti.ru/
+            rss: https://vedomosti.ru/rss/news
+            icon: https://i.vas3k.ru/e52824e20f01c22baee086c03cc5cac5c011b4fd5e7cd2062bb3d78066cb2019.jpg
+      - name: 🗽 Либеральные
+        slug: ru_left
+        view: "blocks/two.html"
+        feeds:
+          - view: "feeds/favicons.html"
+            is_parsable: false
+            mix:
+              - https://tvrain.ru/export/rss/all.xml
+              - https://www.znak.com/rss
+              - https://paperpaper.ru/feed/
+              - https://rss.dw.com/rdf/rss-ru-top
+              - https://content.novayagazeta.ru/rss/all.xml
+              - https://rss.newsru.com/top/main
+              - https://www.svoboda.org/api/z-pqpiev-qpp
+      - name: 👮‍♂️ Прокремлёвские
+        slug: ru_right
+        view: "blocks/two.html"
+        feeds:
+          - view: "feeds/favicons.html"
+            is_parsable: false
+            mix:
+              - https://lenta.ru/rss
+              - https://russian.rt.com/feed
+              - https://kp.ru/rss/allsections.xml
+              - https://iz.ru/xml/rss/all.xml
+              - https://ria.ru/export/rss2/archive/index.xml
+      - name: Телеграм
+        slug: tg
+        feeds:
+          - name: Varlamov News
+            url: https://t.me/varlamov_news
+            rss: https://infomate.club/parsing/telegram/varlamov_news?only=text
+            icon: https://i.vas3k.ru/93a624086cd3835fdf9c704155b91f12b7cf238726bc39316f0a605c87797fa7.jpg
+          - name: Новая Газета (+ Europe)
+            url: https://t.me/novaya_europe
+            mix:
+              - https://infomate.club/parsing/telegram/novaya_pishet
+              - https://infomate.club/parsing/telegram/novaya_europe
+            icon: https://i.vas3k.ru/f2cabb4173f6dcaad7db9f6285458e0d79593a5eba08b77f16e89ff532171860.jpg
+          - name: Редакция
+            url: https://t.me/redakciya_channel
+            rss: https://infomate.club/parsing/telegram/redakciya_channel
+            icon: https://i.vas3k.ru/3542c85a26b71cd24d71efe36b1917fd0eaf455e9becb6fe388f1587a3a0eca7.jpg
+
+  - name: Product Life
+    slug: product
+    is_visible: true
+    is_private: false
+    curator:
+      name: Product Life
+      url: <a href="https://twitter.com/nikilyushkin">@nikilyushkin</a>
+      title: Product Management and Growth
+      avatar:  https://gday.iocats.com/static/icons/product_life.png
+      bio: My subjective selection from the product, startup world.
+      footer: >
+        These are 70% of resources, I'm consuming. 
+        Therefore, this is set is always changing to better fit my current focus and needs.
+    blocks:
+      - name: 🦄 Startup and Trends
+        slug: unicorns
+        feeds:
+          - name: "Product Hunt"
+            url: https://www.producthunt.com
+            rss: https://www.producthunt.com/feed
+            is_parsable: false
+            icon: https://i.vas3k.ru/fep.png
+          - name: "Medium Product Management"
+            url: https://medium.com/tag/product-management
+            rss: https://medium.com/feed/tag/product-management
+          - name: TechCrunch
+            rss: http://feeds.feedburner.com/TechCrunch/
+            url: https://techcrunch.com
+            is_parsable: false
+          - name: "YC Hacker News"
+            url: https://news.ycombinator.com
+            rss: https://news.ycombinator.com/rss
+            columns: 2
+      - name: ⚙️ PM in Tech
+        slug: pmtech
+        feeds:
+          - name: Changelog
+            url: https://changelog.com/
+            rss: https://changelog.com/feed
+            icon: https://i.vas3k.ru/nip.png
+          - name: 'Reddit: /r/technology/'
+            url: https://www.reddit.com/r/technology
+            rss: https://www.reddit.com/r/technology.rss
+            icon: https://i.vas3k.ru/3062b953fa39b4f3bc26a5f3ba65effb0fac935ffa5ee50c3b734107be457c48.png
+            is_parsable: false
+          - name: "GitHub Trending"
+            url: https://github.com/trending
+            rss: https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml
+      - name: 🖤 ️Indie Builders
+        slug: make
+        feeds:
+          - name: "Show YC"
+            url: https://news.ycombinator.com/show
+            rss: https://hnrss.org/show
+          - name: Indiehackers
+            url: https://www.indiehackers.com/
+            rss: https://rss.app/feeds/faq798zw7eJuer9w.xml
+          - name: 'Reddit: /r/SideProject'
+            url: https://www.reddit.com/r/SideProject/
+            rss: https://www.reddit.com/r/SideProject.rss
+            icon: https://i.vas3k.ru/3062b953fa39b4f3bc26a5f3ba65effb0fac935ffa5ee50c3b734107be457c48.png
+            is_parsable: false
+      - name: "Product Companies Blogs"
+        slug: product_companies
+        feeds:
+          - name: Intercom
+            url: https://www.intercom.com/blog/
+            rss: https://www.intercom.com/blog/feed/
+          - name: Atlassian
+            url: https://www.atlassian.com/blog/
+            rss: https://atlassianblog.wpengine.com/feed
+          - name: Reforge
+            url: https://www.reforge.com/blog
+            rss: https://www.reforge.com/blog?format=rss
+          - name: Mindtheproduct
+            url: https://www.mindtheproduct.com
+            rss: https://www.mindtheproduct.com/feed/
+      - name: "🎧 Podcasts"
+        slug: podcasts
+      - name: "🫂 People's Blogs & Newsletters"
+        slug: pms_and_lists
+      - name: Agile
+        slug: agile
+
+  - name: All Things Engineering
+    slug: ate
+    is_visible: true
+    is_private: false
+    curator:
+      name: All Things Engineering
+      title: Engineering & Developer Experience
+      avatar: https://i.vas3k.club/69b26425bc514dea3ee485d67a5d11565f074b86a35227fb06b1a6640aa1e848.jpg
+      bio: Engineering & Developer Experience from the best in class. Culture, Architecture, DevOps and stuff at scale.
+    blocks:
+      - name: "🏢 %company% Engineering"
+        slug: labs
+        feeds:
+          - name: "AirBnb Engineering"
+            url: https://medium.com/airbnb-engineering
+            rss: https://medium.com/feed/airbnb-engineering
+            is_parsable: false
+
+          - name: "Netflix Engineering"
+            url: https://netflixtechblog.com/
+            rss: https://netflixtechblog.com/feed
+            is_parsable: false
+
+          - name: "Pinterest Engineering"
+            url: https://medium.com/pinterest-engineering
+            rss: https://medium.com/feed/pinterest-engineering
+            is_parsable: false
+
+          - name: "Facebook"
+            url: https://research.fb.com/blog/
+            rss: https://rssmix.com/u/10966862/rss.xml
+            is_parsable: false
+            mix:
+              - https://research.fb.com/blog/feed
+              - https://engineering.fb.com/category/ai-research/feed/
+              - https://engineering.fb.com/category/ml-applications/feed/
+
+          - name: "Uber Engineering"
+            url: https://eng.uber.com/
+            rss: https://eng.uber.com/category/articles/ai/feed/
+            is_parsable: false
+            columns: 1
+            articles_per_column: 10
+            mix:
+              - https://eng.uber.com/category/articles/uberdata/feed/
+              - https://eng.uber.com/category/articles/general-engineering/feed/
+              - https://eng.uber.com/category/articles/architecture/feed/
+
+          - name: "Spotify Engineering"
+            url: https://engineering.atspotify.com
+            rss: https://engineering.atspotify.com/rss/
+            is_parsable: false
+
+          - name: "SCRIBD"
+            url: https://tech.scribd.com/blog/
+            rss: https://tech.scribd.com/feed.xml
+            is_parsable: false
+
+          - name: "Jesse Anderson"
+            url: https://www.jesse-anderson.com/category/blog/
+            rss: https://www.jesse-anderson.com/category/blog/feed/
+            is_parsable: false
+
+          - name: Atlassian
+            url: https://developer.atlassian.com/blog/
+            rss: https://developer.atlassian.com/blog/feed.xml
+
+      - name: "Infrastructure"
+        slug: infra
+        feeds:
+          - name: "AWS"
+            url: https://aws.amazon.com/new/
+            rss: https://aws.amazon.com/new/feed/
+            is_parsable: false
+            columns: 2
+            mix:
+              - https://aws.amazon.com/blogs/big-data/feed/
+              - https://aws.amazon.com/blogs/database/feed/
+              - https://aws.amazon.com/blogs/devops/feed/
+              - https://aws.amazon.com/blogs/infrastructure-and-automation/feed/
+              - https://aws.amazon.com/blogs/machine-learning/feed/
+
+          - name: "Azure"
+            url: https://azure.microsoft.com/en-us/blog/
+            rss: https://azure.microsoft.com/en-us/blog/feed/
+
+
+  - name: Tech World
+    slug: tech
+    is_visible: true
+    is_private: false
+    curator:
+      name: Tech World
+      title: Key news in the world of tech
+      avatar: https://gday.iocats.com/static/icons/tech.png
+      bio: Mainstream tech
+    blocks:
+      - name: Tech Media
+        slug: en_tech
+        feeds:
+          - name: YC Hacker News
+            url: https://news.ycombinator.com
+            rss: https://news.ycombinator.com/rss
+          - name: TechCrunch
+            rss: https://techcrunch.com/feed/
+            url: https://techcrunch.com
+            is_parsable: false
+          - name: Engadget
+            rss: https://www.engadget.com/rss.xml
+            url: https://www.engadget.com
+          - name: Gizmodo
+            url: https://gizmodo.com
+            rss: https://gizmodo.com/rss
+          - name: Wired
+            url: https://www.wired.com
+            rss: https://www.wired.com/feed/rss
+            icon: https://i.vas3k.ru/feu.png
+          - name: Mashable
+            url: https://mashable.com/
+            rss: http://feeds.mashable.com/Mashable
+          - name: The Verge
+            rss: https://www.theverge.com/rss/index.xml
+            url: https://www.theverge.com
+          - name: VentureBeat
+            url: https://venturebeat.com
+            rss: http://feeds.feedburner.com/venturebeat/SZYF
+          - name: CNET
+            url: https://www.cnet.com/topics/tech-industry/
+            rss: http://feed.cnet.com/feed/topics/tech-industry
+          - name: The Next Web
+            rss: http://feeds2.feedburner.com/thenextweb
+            url: https://thenextweb.com
+          - name: 9to5mac
+            url: https://9to5mac.com
+            rss: https://9to5mac.com/feed/
