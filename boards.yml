@@ -222,8 +222,7 @@ boards:
       avatar:  https://gday.iocats.com/static/icons/product_life.png
       bio: My subjective selection from the product, startup world.
       footer: >
-        These are 70% of resources, I'm consuming. 
-        Therefore, this is set is always changing to better fit my current focus and needs.
+         This set is always changing to better fit my current focus and needs. Stay tuned 🤓
     blocks:
       - name: 🦄 Startup and Trends
         slug: unicorns
@@ -290,10 +289,36 @@ boards:
             rss: https://www.mindtheproduct.com/feed/
       - name: "🎧 Podcasts"
         slug: podcasts
+        feeds:
+          - name: Soft Skills Engineering
+            url: https://softskills.audio/
+            rss: https://softskills.audio/feed.xml
+          - name: The a16z Podcast
+            url: https://future.com/podcast-network/
+            rss: https://future.com/feed
+          - name: Talks at Google
+            url: https://www.youtube.com/c/talksatgoogle/videos
+            rss: https://www.youtube.com/feeds/videos.xml?channel_id=UCbmNph6atAoGfqLoCL_duAg
+            icon: https://gday.iocats.com/static/icons/youtube.png
+          - name: StartupGrind
+            url: https://www.youtube.com/c/StartupGrind/videos
+            rss: https://www.youtube.com/feeds/videos.xml?channel_id=UCwB3HiWejAkml1UZ0Qo2bFg
+            icon: https://gday.iocats.com/static/icons/youtube.png
       - name: "🫂 People's Blogs & Newsletters"
         slug: pms_and_lists
+        feeds:
+          - name: Silicon Valley Product Group
+            url: https://www.svpg.com
+            rss: https://www.svpg.com/rss/
+          - name: Stratechery
+            url: https://stratechery.com
+            rss: https://stratechery.com/rss/
+          - name: First Round Review
+            url: https://review.firstround.com
+            rss: https://review.firstround.com/feed.xml
       - name: Agile
         slug: agile
+        is_visible: false
 
   - name: All Things Engineering
     slug: ate

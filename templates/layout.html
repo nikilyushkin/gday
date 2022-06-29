@@ -24,9 +24,11 @@
     {% block menu %}
         <div class="menu">
             <div class="menu-logo"><a href="{% url "index" %}">
-                <img src="{% static "images/logo-128x128.png" %}" alt="">&nbsp;{{ settings.APP_NAME|lower|safe }}</a>
+               {{ settings.APP_NAME|lower|safe }}, mate </a>
             </div>
-            <div class="menu-center"></div>
+            <div class="menu-center">
+                <a href="/what/">What's that?</a>
+            </div>
             <div class="menu-theme-switcher">
                 <label class="theme-switcher" for="checkbox">
                     <input type="checkbox" id="checkbox" />

@@ -9,7 +9,7 @@ from sentry_sdk.integrations.django import DjangoIntegration
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = (os.getenv("DEBUG") != "false")  # SECURITY WARNING: don't run with debug turned on in production!
 SECRET_KEY = os.getenv("SECRET_KEY") or "wow so secret"
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "0.0.0.0", "gday.iocats.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "0.0.0.0", "gday.iocats.com", "gday.co.nz"]
 INTERNAL_IPS = ["127.0.0.1"]
 
 INSTALLED_APPS = [

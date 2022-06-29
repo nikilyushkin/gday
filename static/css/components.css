@@ -30,6 +30,14 @@
         color: var(--link-color);
     }
 
+    .menu-center {
+        font-size: 20px;
+        text-align: right;
+        padding: 5px;
+        position: relative;
+        top: -3px;
+    }
+
 .landing-info {
     text-align: center;
     min-height: 100px;
