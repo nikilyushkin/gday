@@ -8,6 +8,15 @@
             document.documentElement.setAttribute('theme', theme);
         }
     </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQSEQ8WNL5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LQSEQ8WNL5');
+    </script>
     <title>{% block title %}{{ settings.APP_NAME|safe }}{% endblock %}</title>
     {% block meta %}
         {% include "common/meta.html" %}
