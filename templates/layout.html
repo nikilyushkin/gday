@@ -33,9 +33,9 @@
     {% block menu %}
         <div class="menu">
             <div class="menu-logo"><a href="{% url "index" %}">
-               {{ settings.APP_NAME|lower|safe }}, mate </a>
+              <img src="{% static "images/logo-128x128.png" %}" alt=""></a>
             </div>
-            <div class="menu-center">
+            <div class="menu-center" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                 <a href="/what/">What's that?</a>
             </div>
             <div class="menu-theme-switcher">
