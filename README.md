@@ -12,7 +12,7 @@ The code of the service created by [Vas3k.club](https://vas3k.club) community. T
 
 ### Live URL: [gday.iocats.com](https://gday.iocats.com)
 
-![](https://previews.dropbox.com/p/thumb/ABkX6Alcbfjc5v76Eg0BfZoOyCwZgUlJrGQwFklDpucTFCLoeIoiG0-5P1J7P6UfkbKbQEKMqM3zLy2Nlttmwcigqn6SXCKkhMeZYRvq5cUeHu1ki2V83k8xcXrB9YoxUz43FgPfonzTltyRlDI-NY4rlWJZ-IUx1qJte88CuFXz0iiu6yiGTfiG44Szq9M_uVEZ9lgjf4VbMuoXI9OH7XFUwUO9S-2KfwulaJ5KKS6gSMIqKd9DSrmZ3t6dRVXPlXmfdhpEWHfQQ6gO6lf0hpku7JiTsJ_G2HbNxl8A3ukN_jW9Ry1vscs-frzk-tGeoYsQD856zncsENmVtdL1QTPKQqKjuCSQYiQTKe7n_Q3eJCrx8Ak-REUlqADzufuGswI/p.png)
+![](https://gday.iocats.com/static/images/gday_poc.png)
 
 ## 🐶 This is a for of a pet-project
 
@@ -124,7 +124,7 @@ We don't have any strict rules on formatting, just explain your motivation and t
 
 ## 👩‍💼 License
 
-[Apache 2.0](LICENSE) © Vasily Zubarev
+Original code [Apache 2.0](LICENSE) © Vasily Zubarev
 
 > TL;DR: you can modify, distribute and use it commercially, 
 but you MUST reference the original author or give a link to service
