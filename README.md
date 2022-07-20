@@ -1,22 +1,24 @@
-# Infomate.club
+# Gday, mate!
 
-[![Build Status](https://travis-ci.org/vas3k/infomate.club.svg?branch=master)](https://travis-ci.org/vas3k/infomate.club)
+[![Deploy master](https://github.com/nikilyushkin/gday/actions/workflows/deploy.yml/badge.svg)](https://github.com/nikilyushkin/gday/actions/workflows/deploy.yml)
 
-Infomate is a small web service that shows multiple RSS sources on one page and performs tricky parsing and summarizing articles using TextRank algorithm. 
+Gday.mate is a small web service that shows multiple RSS sources on one page and performs tricky parsing and summarizing articles using TextRank algorithm. 
 
 It helps to keep track of news from different areas without subscribing to hundreds of media accounts and getting annoying notifications.
 
 Thematic and people-based collections does a really good job for discovery of new sources of information. Since we all are biased, such compilations can really help us to get out of information bubbles.
 
-### Live URL: [infomate.club](https://infomate.club)
+The code of the service created by [Vas3k.club](https://vas3k.club) community. The original service is live [here](https://infomate.club).
 
-![](https://i.vas3k.ru/i7m.png)
+### Live URL: [gday.iocats.com](https://gday.iocats.com)
 
-## 🐶 This is a pet-project
+![](https://previews.dropbox.com/p/thumb/ABkX6Alcbfjc5v76Eg0BfZoOyCwZgUlJrGQwFklDpucTFCLoeIoiG0-5P1J7P6UfkbKbQEKMqM3zLy2Nlttmwcigqn6SXCKkhMeZYRvq5cUeHu1ki2V83k8xcXrB9YoxUz43FgPfonzTltyRlDI-NY4rlWJZ-IUx1qJte88CuFXz0iiu6yiGTfiG44Szq9M_uVEZ9lgjf4VbMuoXI9OH7XFUwUO9S-2KfwulaJ5KKS6gSMIqKd9DSrmZ3t6dRVXPlXmfdhpEWHfQQ6gO6lf0hpku7JiTsJ_G2HbNxl8A3ukN_jW9Ry1vscs-frzk-tGeoYsQD856zncsENmVtdL1QTPKQqKjuCSQYiQTKe7n_Q3eJCrx8Ak-REUlqADzufuGswI/p.png)
 
-Which means you really shouldn't expect much from it. I wrote the MVP over the weekend to solve my own pain. No state-of-art kubernetes bullshit, no architecture patterns, even no tests at all. It's here just to show people what a pet-project might look like.
+## 🐶 This is a for of a pet-project
 
-This code has been written for fun, not for business. There is usually a big difference.
+Which means you really shouldn't expect much from it.  No state-of-art kubernetes bullshit, no architecture patterns, even no tests at all. It's here just to show people what a pet-project might look like.
+
+This code has been written for fun, not for business. 
 
 ## 🤔 How it works
 
@@ -27,19 +29,22 @@ Parsing and feed updates are performed by the three scripts running in cron. Lik
 
 [Feedparser](https://pythonhosted.org/feedparser/) and [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) are used to find, download and parse RSS. 
 
-Text summarization is done via [newspaper3k](https://newspaper.readthedocs.io/en/latest/) with some additional protection against bad types of content like podcasts and too big pages in general, which can eat all your memory. Anything can happen in the RSS world :)
+Text summarization is done via [newspaper3k](https://newspaper.readthedocs.io/en/latest/) with some additional protection against bad types of content like podcasts and too big pages in general, which can eat all your memory.
 
 ## ▶️ Running it locally
 
 The easy way. Install [docker](https://docs.docker.com/install/) on your machine. Then:
 
 ```
-git clone git@github.com:vas3k/infomate.club.git
-cd infomate.club
+git clone git@github.com:nikilyushkin/gday.git
+cd gday
 docker-compose up --build
 ```
 
 On the first run you might need to wait until the "migrate_and_init" container will finish its job populating your database. 
+
+It takes a while.
+
 After that you can open [localhost:8000](http://localhost:8000) in your favorite browser and enjoy.
 
 If something stucked or you want to terminate it completely, use this command in another terminal:

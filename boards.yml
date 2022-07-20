@@ -220,7 +220,7 @@ boards:
       url: <a href="https://twitter.com/nikilyushkin">@nikilyushkin</a>
       title: Product Management and Growth
       avatar:  https://gday.iocats.com/static/icons/product_life.png
-      bio: My subjective selection from the product, startup world.
+      bio: My subjective selection of news from the product, startup world.
       footer: >
          This set is always changing to better fit my current focus and needs. Stay tuned 🤓
     blocks:
@@ -318,7 +318,16 @@ boards:
             rss: https://review.firstround.com/feed.xml
       - name: Agile
         slug: agile
-        is_visible: false
+        feeds:
+          -   name: Scrum.Org Blog
+              url: https://www.scrum.org/resources/blog
+              rss: https://www.scrum.org/resources/blog/rss.xml
+          -   name: Less.Works Blog
+              url: https://less.works/blog/index.html
+              rss: https://less.works/blog/feed.xml
+          -   name: Management 3.0 Blog
+              url: https://management30.com/blog/
+              rss: https://management30.com/blog/feed/
 
   - name: All Things Engineering
     slug: ate
