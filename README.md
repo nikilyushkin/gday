@@ -14,7 +14,7 @@ The code of the service created by [Vas3k.club](https://vas3k.club) community. T
 
 ![](https://gday.iocats.com/static/images/gday_poc.png)
 
-## 🐶 This is a for of a pet-project
+## 🐶 This is a fork of a pet-project 😬
 
 Which means you really shouldn't expect much from it.  No state-of-art kubernetes bullshit, no architecture patterns, even no tests at all. It's here just to show people what a pet-project might look like.
 
