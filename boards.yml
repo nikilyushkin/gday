@@ -336,7 +336,7 @@ boards:
     curator:
       name: All Things Engineering
       title: Engineering & Developer Experience
-      avatar: https://i.vas3k.club/69b26425bc514dea3ee485d67a5d11565f074b86a35227fb06b1a6640aa1e848.jpg
+      avatar: https://gday.iocats.com/static/icons/ate.png
       bio: Engineering & Developer Experience from the best in class. Culture, Architecture, DevOps and stuff at scale.
     blocks:
       - name: "🏢 %company% Engineering"
